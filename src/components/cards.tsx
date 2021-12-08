@@ -76,6 +76,8 @@ const Cards: FC = () => {
               <button>More Info</button>
             </div>
           </article>  
+
+          
        
       </main>
 

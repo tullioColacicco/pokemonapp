@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "pokemonapp022aab2d": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

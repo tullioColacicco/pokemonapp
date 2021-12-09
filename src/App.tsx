@@ -2,6 +2,9 @@
 import './App.css';
 import "nes.css/css/nes.min.css";
 import { FC,useState } from 'react';
+import Amplify, { Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+
 import {
   
   Routes,
@@ -13,6 +16,7 @@ import Header from './components/header';
 import MyPokemon from './components/MyPokemon';
 import Mypacks from './components/packs';
 import { dataPokemon } from './data/data';
+Amplify.configure(awsconfig);
 
 export interface Pokemon  {
   id: number

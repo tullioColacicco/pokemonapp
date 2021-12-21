@@ -3,10 +3,11 @@
     "graphqltransformer": {
       "addmissingownerfields": true,
       "validatetypenamereservedwords": true,
-      "useexperimentalpipelinedtransformer": false,
+      "useexperimentalpipelinedtransformer": true,
       "enableiterativegsiupdates": true,
       "secondarykeyasgsi": true,
-      "skipoverridemutationinputtypes": true
+      "skipoverridemutationinputtypes": true,
+      "transformerversion": 2
     },
     "frontend-ios": {
       "enablexcodeintegration": true
@@ -27,6 +28,9 @@
     },
     "appsync": {
       "generategraphqlpermissions": true
+    },
+    "project": {
+      "overrides": true
     }
   }
 }

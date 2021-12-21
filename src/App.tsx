@@ -4,18 +4,11 @@ import "nes.css/css/nes.min.css";
 import { FC,useState } from 'react';
 import Amplify, { Auth } from 'aws-amplify';
 import awsconfig from './aws-exports';
-
-import {
-  
-  Routes,
-  Route
-} from "react-router-dom";
-import Cards from './components/cards';
 import Icons from './components/icons';
 import Header from './components/header';
-import MyPokemon from './components/MyPokemon';
-import Mypacks from './components/packs';
+
 import { dataPokemon } from './data/data';
+import Main from './components/main';
 Amplify.configure(awsconfig);
 
 export interface Pokemon  {
@@ -26,6 +19,12 @@ export interface Pokemon  {
   src : string
 }
 
+export interface User {
+  sub: string;
+  identities: string;
+  email_verified: boolean;
+  email: string;
+}
 
 const typhlosion: Pokemon = {
 id: 1,
@@ -34,33 +33,22 @@ generation: 2,
 game: "gold",
 src: "https://img.pokemondb.net/sprites/silver/shiny/typhlosion.png"
 }
+
+
 const App: FC =() => {
   const [pokemon, setMyPokemon] =  useState(typhlosion)
+  const [user, setUser] =  useState<User| null>(null)
   const [capturedPokemon, setCaptured] =  useState<dataPokemon[]>([])
-  console.log(capturedPokemon );
+  console.log(user );
 
   return (
   // <BrowserRouter>
     <div className="parent">
   <div id="pageHeader">
- <Header/>
+ <Header setUser={setUser}/>
  <Icons/>
   </div>
- 
-  <article id="mainArticle" >
-    <div id='container' className="nes-container is-centered is-dark with-title">
-  <p className="title">Pokemon Sprites!</p>
-  <Routes>
-  <Route path="/" element={<Cards />} />
- <Route path="myPokemon"  element={<MyPokemon pokemon={pokemon} capturedPokemon={capturedPokemon} />} />
- <Route path="packs"  element={<Mypacks  capturedPokemon={capturedPokemon} setCaptured={setCaptured}/>} />
- </Routes>
-</div>
-</article>
-
-
-
-
+ {user ?  <Main capturedPokemon={capturedPokemon} user={user} setCaptured={setCaptured} pokemon={pokemon} /> : <div>hello</div> }
 
 
   <nav id="mainNav">
@@ -70,7 +58,7 @@ const App: FC =() => {
   </nav>
 
   <div id="siteAds"><i className="nes-pokeball"></i></div>
-  <footer id="pageFooter">Footer</footer>    </div>
+  <footer id="pageFooter"></footer>    </div>
   // </BrowserRouter>
   );
 }

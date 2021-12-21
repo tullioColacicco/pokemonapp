@@ -6,5 +6,31 @@
       "dependsOn": [],
       "customAuth": false
     }
+  },
+  "api": {
+    "pokemonapp": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2022-12-10T00:05:59.740Z",
+              "description": "api key"
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authpokemonapp022aab2d"
+              }
+            }
+          ]
+        }
+      }
+    }
   }
 }

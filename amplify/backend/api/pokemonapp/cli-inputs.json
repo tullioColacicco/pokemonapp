@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "pokemonapp",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\colac\\Documents\\reactProject\\pokemonapp\\amplify\\backend\\api\\pokemonapp\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "API_KEY",
+      "expirationTime": 365,
+      "apiKeyExpirationDate": "2022-12-10T00:05:59.740Z",
+      "keyDescription": "api key"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "AMAZON_COGNITO_USER_POOLS",
+        "cognitoUserPoolId": "authpokemonapp022aab2d"
+      }
+    ]
+  }
+}

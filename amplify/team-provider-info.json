@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-pokemonapp-dev-175718-unauthRole",
       "StackName": "amplify-pokemonapp-dev-175718",
       "StackId": "arn:aws:cloudformation:us-east-1:420961875318:stack/amplify-pokemonapp-dev-175718/37e239f0-587a-11ec-84a7-124b8f7e7c13",
-      "AmplifyAppId": "d1osxrwa2t6fem"
+      "AmplifyAppId": "d1osxrwa2t6fem",
+      "AuthTriggerTemplateURL": ""
     },
     "categories": {
       "auth": {

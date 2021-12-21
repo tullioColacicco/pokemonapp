@@ -120,3 +120,12 @@
   padding: 10px;
   width: 100%;
 }
+.text > button:active {
+  background-color: gray;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.welcome {
+  margin: 10%;
+}

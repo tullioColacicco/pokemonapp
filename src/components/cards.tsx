@@ -1,10 +1,19 @@
 import { FC } from "react";
-
-const Cards: FC = () => {
-    return (
-
-        <main className="grid">
+import { User } from "../App";
+interface Props {
   
+  user: User
+}
+
+const Cards = ({user}: Props) => {
+    return (
+<>
+      <div> <h3>User:</h3>
+      <p>{user.email}</p></div>
+     
+        <main className="grid">
+       
+
         <article className="card">
           <img src="https://img.pokemondb.net/sprites/silver/shiny/typhlosion.png"alt="Typhlosion"/>
           <div className="text">
@@ -68,20 +77,14 @@ const Cards: FC = () => {
             </div>
           </article>  
       
-          <article className="card">
-         <img src="https://img.pokemondb.net/sprites/yellow/normal/arcanine-color.png" alt="Arcanine"/>
-            <div className="text">
-              <h3>You Got!</h3>
-              <p>Typhlosion</p>
-              <button>More Info</button>
-            </div>
-          </article>  
+       
 
           
        
       </main>
-
-
+      <div className="welcome">
+      <h1>Welcome!</h1></div>
+      </>
     )
     
 }
